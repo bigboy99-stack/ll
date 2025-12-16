@@ -1,0 +1,134 @@
+:root {
+  scroll-behavior: smooth;
+  scroll-padding-block: 200px 150px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --bl: hsl(0, 0%, 99%);
+  --bd: hsl(0, 0%, 2%);
+  --l: oklch(95.213% 0.00011 271.152);
+  --d: oklch(24.776% 0.00003 271.152);
+  --dg: oklch(59.175% 0.20134 142.511);
+  --al: oklch(98.987% 0.01067 204.685);
+  --ad: oklch(23.345% 0.04884 233.963);
+  --hb: oklch(59.667% 0.22126 258.047);
+  --b1: oklch(56.239% 0.24047 264.42);
+  --tb: oklch(37.001% 0.1717 262.218);
+  --anim: background-color 0.2s ease-in-out 0.1s;
+  --anim2: color 0.2s ease-in-out 0.1s;
+  /* --gra: linear-gradient(to right, #00704b 20%, var(--tb) 72%);
+  --grad: linear-gradient(to right, var(--hb) 23%, #00a36d 72%); */
+  --uls: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0.3s ease-out;
+  --transition-duration: 0.8s;
+  --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {box-sizing: border-box !important;}
+.b {max-width: 1500px;min-height: max-content;margin-block: 12px;font-family: 'Inter', sans-serif;margin-inline: auto;}
+.bl {background-color:var(--bl);transition: var(--anim)}
+.bd {background-color:var(--bd);transition: var(--anim)}
+
+.c {position: relative;margin-inline: auto;max-width: 1000px;width: 96%;height: 200vh;}
+.nd {display: flex;position: fixed;top: 12px;left: 50%;transform: translateX(-50%);align-items: center;padding-inline: 22px;
+ width: 99%;z-index: -3;border-radius: 16px;margin-inline: auto;font-family: "poppins", sans-serif;justify-content: space-between;
+ max-width: 1230px;letter-spacing: 0.1mm;min-height: 60px;}
+.n {display: flex;align-items: center;padding: 0px;height: 57px;gap: 28px;margin-inline-start: 24px;position: relative;}
+.lb {font-weight: 500;font-size: 16px;align-items: center;display: flex;}
+.pd2 {display: flex;}
+.pd2:hover{cursor: pointer;}
+.n a:not(.n > a) {font-weight: 600;display: flex;height: 50px;align-content: center;}
+.prp {font-weight: 500;font-size: 16px;align-content: center;}
+button {border: 1px solid #33333321;box-shadow: -2px 2px 4px #33333399;background: #ffffff76;border-radius: 6px;padding: 6px;min-height: 45px;align-content: center;}
+#sb-btn {min-height: 43px;margin-inline: 24px 0px;padding-block-end: 1px;}
+button:active, .sbs:active, a:active {transform: scale(0.94);}
+button:focus-visible, a:focus-visible {outline: 2px solid var(--b1);outline-offset: 3px;}
+button:focus, a:focus, .sbs:focus, button:hover {font-size: 109%;transition: font-size 0.4s ease-in;cursor: pointer;border-radius: 4px;}
+.prs {fill: var(--b1);margin: 2px 0px 0px 4px;}
+.prj {visibility: hidden;opacity: 0;transform: translateY(-10px);color: var(--d);position: absolute;top: 48px;left: -16px;transition: var(--uls);list-style-type: none;}
+.uls {visibility: visible;font-weight: 600;opacity: 1;transform: translateY(0);transition: var(--uls);background: #ffffff;border: 2px solid #63636333;border-radius: 12px;padding: 8px;width: max-content;}
+a {text-decoration: none;display: inline-block;letter-spacing: 0.02rem;font-size: 1rem;color: inherit;align-items: center;font-weight: 600;}
+a:hover:not(.li a, .bread a) {text-decoration: underline;font-size: 109%;transition: font-size 0.2s ease-out;}
+.ld {display: flex;align-items: center;}
+
+.sbs {width: 30px;height: 30px;fill: var(--d);margin: 0px;}
+.sb {visibility: hidden;z-index: 5;max-width: max-content;min-width: 60%;height: 100vh;position: fixed;top: 80px;right: 0px;opacity: 0;transform: translateX(100%);transition: var(--uls);}
+.sbb {visibility: visible;opacity: 1; transform: translateX(0);transition: var(--uls);background: none;border-radius: 12px;-webkit-backdrop-filter: blur(4.5px);backdrop-filter: blur(4.5px);border: 3px solid #63636333;z-index: 30;}
+.sb li {font-weight: 600;padding-block: 14px;font-size: 21px;}
+.sb ul {padding-inline: 32px 16px;margin-block-start: 13px;}
+.bread a {font-size: 19px;padding-inline-end: 4px;}
+.bsp {font-size: 16px;position: absolute;color: #013ac5;}
+.ba2 {padding-inline-start: 17px;}
+.ca, .ba2 {color: #013ac5;}
+.h1 {font-size: clamp(28px, 10vw + 1rem, 40px);margin: 12px auto;height: max-content;max-width: 465px;text-align: center;color: #013ac5;}
+
+.main {margin: 88px 0px 32px 4px;}
+.sbf {min-width: 90%;width: 90%;margin-inline: auto;align-self: flex-end;display: flex;border-radius: 12px;flex: 1;gap: 16px;}
+#sbi {flex: 1;border-radius: 8px;min-height: 28px;max-height: 150px;width: 100%;overflow: hidden;resize: none;color: var(--d);border: 2px solid #00000039;background-color: hsl(0, 0%, 100%);padding: 9px;align-content: center;}
+#sub {background-color: #fff;height: 51px;align-self: flex-end;margin-block-end: 4px;}
+
+.result {width: 90%;margin: 24px auto 40px auto;max-height: max-content;min-height: 28px;padding-block:8px 23px;border-radius: 8px;background-color: hsl(0, 0%, 95%);border: 2px solid #00000039;}
+#ct {margin: 16px auto 0px auto;max-width: 700px;}
+#ct p {max-width: 700px;margin-inline: 6px;}
+#ema {width: 142px;padding:2px;margin: 1px;}
+#ema:hover {cursor: copy;}
+footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 6px;text-align: center;}
+
+[data-theme="dark"] {
+  .n a, .prp, .sb li, footer, #sub, #ct p, .lb{color: var(--l);transition: var(--anim2)}
+  button {box-shadow: -2px 2px 4px #d1d1d133;border: 1px solid #dedede39;background: #0000002a;}
+  button:focus-visible, a:focus-visible {outline: 2px solid var(--dg);outline-offset: 3px;}
+  .prs {fill: var(--dg);margin: 2px 0px 0px 4px;}
+  .uls {transition: var(--uls);}
+  .sb {border: 3px solid #90909039;}
+  .sbs {fill: var(--l);}
+  .bsp {color: var(--dg);}
+  .p1 {color: var(--l);}
+  #ema {color: var(--d);}
+  .ca, .ba2 {color: #00a200;}
+  #sbi {border: 2px solid hsla(0, 0%, 90%, 0.25);background-color: hsl(0, 0%, 4%);color: var(--l);}
+  #sub {background-color: hsl(0, 0%, 4%);border: 2px solid hsla(0, 0%, 90%, 0.25);box-shadow: none;}
+  .result {background-color: hsl(0, 0%, 5%);transition: var(--anim);border: 2px solid #e6e6e640;}
+}
+
+@media screen and (max-width: 544px) { .bread a{font-size: 17px;} .p1{margin-block: 12px 12px;} .ca {margin-block-end: 6px;} .ba2 {margin-inline-end: 8px;} .main {margin-block-start: 96px;}}
+@media screen and (max-width: 321px) { .sbs {margin-inline: 16px 20px;} .n {margin-inline-start: 20px;}}
+@media (prefers-reduced-motion: reduce) {:root {--anim: none;--anim2: none;--uls: none;}}
+
+/* ======================================= */
+/* 🚀 Page Transition Styles (CSS) */
+/* ======================================= */
+
+/* 1. Define the default transition behavior for all views */
+@keyframes circle-reveal {
+  from { clip-path: circle(0% at var(--x) var(--y)); }
+  to { clip-path: circle(150% at var(--x) var(--y)); }
+}
+
+@keyframes circle-hide {
+  from { clip-path: circle(150% at var(--x) var(--y)); }
+  to { clip-path: circle(0% at var(--x) var(--y)); }
+}
+
+/* 2. Target the view-transition pseudo-elements */
+/* Target the *old* view being replaced (the page you are leaving) */
+::view-transition-old(root) {
+  /* The element being removed will shrink/hide */
+  animation: circle-hide var(--transition-duration) var(--transition-easing) forwards;
+}
+
+/* Target the *new* view replacing the old one (the page you are entering) */
+::view-transition-new(root) {
+  /* The element being added will grow/reveal */
+  animation: circle-reveal var(--transition-duration) var(--transition-easing) forwards;
+}
+
+/* 3. Handle Dark Mode for the transition colors */
+[data-theme="dark"]::view-transition-old(root),
+[data-theme="dark"]::view-transition-new(root) {
+  /* Ensure the new view transition uses the dark background */
+  background-color: var(--bd); 
+}
+
+/* Ensure the transition container covers the whole screen */
+::view-transition-group(root) {
+  isolation: isolate;
+}

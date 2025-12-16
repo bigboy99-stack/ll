@@ -1,0 +1,7 @@
+node_modules
+.env
+webpack.config.js
+wrangler.toml
+worker.js
+./src/pracserver.html
+./src/pracserver.mjs
