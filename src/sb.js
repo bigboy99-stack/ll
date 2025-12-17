@@ -111,7 +111,7 @@ sub.addEventListener('click', async (e) => {
     } finally {
       sub.disabled = false;
       inp.focus()
-      res.textContent = 'find words closest in meaning rather than matching letters';
+      inp.textContent = 'find words closest in meaning rather than matching letters';
     }
 });
 

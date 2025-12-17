@@ -86,7 +86,7 @@ footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 
   .ca, .ba2 {color: #00a200;}
   #sbi {border: 2px solid hsla(0, 0%, 90%, 0.25);background-color: hsl(0, 0%, 4%);color: var(--l);}
   #sub {background-color: hsl(0, 0%, 4%);border: 2px solid hsla(0, 0%, 90%, 0.25);box-shadow: none;}
-  .result {background-color: hsl(0, 0%, 5%);transition: var(--anim);border: 2px solid #e6e6e640;}
+  .result {background-color: hsl(0, 0%, 5%);transition: var(--anim);border: 2px solid #e6e6e640;color: var(--l);}
 }
 
 @media screen and (max-width: 544px) { .bread a{font-size: 17px;} #sbi {padding-block-start: 0px;} .p1{margin-block: 12px 12px;}}
