@@ -110,6 +110,8 @@ sub.addEventListener('click', async (e) => {
     } catch (err) {
       console.error('Fetch error:', err);
       alert(`Error: ${err.message} Please ensure your Node.js server and Qdrant database are running.`);
+      res.textContent = ''
+      res.classList.remove('big-text');
     } finally {
       sub.disabled = false;
       inp.focus()
