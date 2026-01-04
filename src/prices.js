@@ -1,6 +1,6 @@
 document.body.onload = initializeTheme,
 setTimeout( () => pd2.focus(), 200);
-setTimeout( () => pd2.focus(), 200);
+setTimeout( () => {if (pd2) pd2.focus()}, 200);
 const ld = document.querySelector(".lb")
 const ht = document.querySelector("html")
 const sb = document.querySelector(".sb")
@@ -9,85 +9,94 @@ const hb = document.querySelector("#sb-btn")
 const prj = document.querySelector(".prj")
 const pd2 = document.querySelector(".pd2");
 const ema = document.querySelector("#ema");
-const btc = document.querySelector(".btc");
+const btc = document.querySelector(".btcwal");
 const copy = Array.from(document.querySelectorAll(".copy"));
 const pages = Array.from(document.querySelectorAll(".pages"));
+const s3 = Array.from(document.querySelectorAll(".sel3"));
 const num = document.querySelector(".num");
-const total = document.querySelector(".total");
+const total = Array.from(document.querySelectorAll('.total'));
 const host = document.querySelector(".host");
 const sel = document.querySelector("#sel");
 const selii = document.querySelector("#sel-ii");
 const iniPayment = document.querySelector(".ini");
 const remPayment = document.querySelector(".rem");
-let CT;
+const hstchk = document.querySelector("#check");
+const currencyToggle = document.querySelector("#currency-toggle");
+const curSym = Array.from(document.querySelectorAll("#currency-symbol"));
+// const main = document.querySelector("#maintainance");
+const seliii = document.querySelector(".sel-iii");
+let exchangeRate = 0.80;
+let val = 500;
 
-const sa = ["SB","EC","ED","HC","RE","PE","EN","LF"]
-const pm = "PAGES MINIMUM"
-const p = "PAGES"
+// const sa = ["SB","EC","ED","HC","RE","PE","EN","LF", 'HS', "CI", "BJ"];
+const pm = "PAGES MINIMUM";
+const p = "PAGES";
+let remaining;
+let initial;
 
-// 2. Update your selii.onchange to trigger the split update
-selii.onchange = () => {
-    const pageCount = Number(selii.value.match(/\d+/)); // Safely gets the number from "5 PAGES"
-    const type = sel.value;
-
-    // Logic to update the total based on selection
-    if (type === "PE") {
-        total.textContent = `$${400 * pageCount + 30}`; CT = 400 * pageCount;
-    } else if (type === "SB" || type === "ED" || type === "HC" || type === "RE" || type === "LF" || type === "EN") {
-        total.textContent = `$${400 * pageCount + 150}`; CT = 400 * pageCount; 
-    } else if (type === "EC") {
-        total.textContent = `$${400 * pageCount + 300}`; CT = 400 * pageCount;
-    }
-
-    // After updating total, calculate the 30/70 split
-    updatePaymentSplits();
+// 1. Data Map: Defines min pages and hosting for each specific sub-type
+const subTypeConfig = {
+    'roofing': { min: 8, host: 400 },
+    'septic': { min: 6, host: 300 },
+    'foundation': { min: 10, host: 500 },
+    'scaffolding': { min: 5, host: 250 },
+    'commercial': { min: 7, host: 350 },
+    'bespoke': { min: 6, host: 300 }
 };
 
 sel.onchange = () => {
     selii.selectedIndex = 0;
-    let startPage1 = 1;
-    let startPage5 = 5;
+    seliii.selectedIndex = 0;
 
-    switch (sel.value) {
-        case "SB": // Small Business
-        case "ED": // Educational
-        case "HC": // Healthcare
-        case "RE": // Real Estate
-        case "LF":
-        case "EN": // Law Firm
-            fl(startPage5);
-            host.textContent = '150';
-            total.textContent = `$2150`;
-            CT = 2000;
-            updatePaymentSplits(); 
-            pages[0].textContent = `5 ${pm}`;
-            break;
-
-        case "EC": // E-Commerce
-            host.textContent = '300';
-            total.textContent = `$4300`;
-            CT = 4000;
-            updatePaymentSplits(); 
-            pages[0].textContent = `10 ${pm}`;
-            pages[1].textContent = `12 ${p}`; 
-            pages[2].textContent = `14 ${p}`;
-            pages[3].textContent = `20 ${p}`;
-            pages[4].textContent = `25 ${p}`;
-            pages[5].textContent = `30 ${p}`;
-            break;
-
-        case "PE": // Personal
-            fl(startPage1); 
-            host.textContent = '30';
-            total.textContent = `$430`; 
-            CT = 400;
-            updatePaymentSplits(); 
-            pages[0].textContent = `1 PAGE MINIMUM`;
-            break;
-        default:
-            console.log("Unknown website type selected");
+    // Toggle Sub-category dropdown
+    if (["HS", "CI", "SC"].includes(sel.value)) {
+        seliii.classList.add('s3');
+        // Set specific sub-options based on main category
+        if (sel.value === 'HS') {
+            s3[0].textContent = 'Roofing'; s3[0].value = 'roofing';
+            s3[1].textContent = 'Septic Tank'; s3[1].value = 'septic';
+            s3[2].textContent = 'Foundation'; s3[2].value = 'foundation';
+        } else if (sel.value === 'CI') {
+            s3[0].textContent = 'Scaffolding Hire'; s3[0].value = 'scaffolding';
+            s3[1].textContent = 'Commercial Cleaning'; s3[1].value = 'commercial';
+            s3[2].textContent = ''; s3[2].value = '';
+        } else if (sel.value === 'SC') {
+            s3[0].textContent = 'Bespoke Joinery'; s3[0].value = 'bespoke';
+            s3[1].textContent = ''; s3[1].value = '';
+            s3[2].textContent = ''; s3[2].value = '';
+        }
+        fl(subTypeConfig[seliii.value].min);
+    } else {
+        seliii.classList.remove('s3');
+        // Standard page updates
+        if (sel.value === "PE") fl(1);
+        else if (sel.value === "EC") fl(10);
+        else fl(5);
     }
-}
+    refreshCalculations();
+};
+
+seliii.onchange = () => {
+    selii.selectedIndex = 0;
+    const config = subTypeConfig[seliii.value];
+    if (config) {
+        fl(config.min); // This updates the "6 Pages", "7 Pages" etc in the dropdown
+    }
+    refreshCalculations();
+};
+
+selii.onchange = refreshCalculations;
+hstchk.onchange = refreshCalculations;
+currencyToggle.onchange = () => { refreshCalculations(); };
+// if (currencyToggle.checked === true) {
+//     curSym.textContent = "£";
+//     console.log('hiii') 
+//     // host.textContent = (hostingCostUSD * exchangeRate).toFixed(0);
+// } else {
+//     curSym.textContent = "$";
+//     // host.textContent = hostingCostUSD;
+// }
+// currencyToggle.checked === true ? curSym.textContent = "£" : curSym.textContent = "$";
 
 copy[0].onclick = () => {
   btc.select();
@@ -102,41 +111,27 @@ copy[1].onclick = () => {
   alert("bitcoin wallet copied to your clip board " + btc.value);
 }
 
-ema.onclick = () => {
+copy[2].onclick = () => {
   ema.select();
   ema.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(ema.value);
   alert
-  ("Copied the text: " + ema.value);
+  ("Copied the email: " + ema.value);
 }
 
-ld.onclick = two,
-hb.onclick = () => {
-    toggleDropdown(hb, sb, "sbb")
-}
-,
-pd2.onclick = () => {
-    toggleDropdown(pd2, prj, "uls")
-}
-,
+ld.onclick = two;
+hb.onclick = () => {toggleDropdown(hb, sb, "sbb")};
+pd2.onclick = () => {toggleDropdown(pd2, prj, "uls")};
 document.addEventListener("keydown", t => {
     "Escape" === t.key && sb.classList.contains("sbb") && toggleDropdown(hb, sb, "sbb"),
     "Escape" === t.key && prj.classList.contains("uls") && toggleDropdown(pd2, prj, "uls")
 }
-),
+)
 document.addEventListener("click", t => {
     !sb.classList.contains("sbb") || sb.contains(t.target) || hb.contains(t.target) || toggleDropdown(hb, sb, "sbb"),
     !prj.classList.contains("uls") || prj.contains(t.target) || pd2.contains(t.target) || toggleDropdown(pd2, prj, "uls")
 }
 );
-
-// 1. Create a reusable function to update the 30/70 split
-function updatePaymentSplits() {   
-    let initial = CT * 0.3;
-    let remaining = CT * 0.7 + Number(host.textContent);
-    iniPayment.textContent = `initial payment: $${initial.toFixed(0)}`;
-    remPayment.textContent = `remaining payment: $${remaining.toFixed(0)}`;
-}
 
 function initializeTheme() {
     "on" === localStorage.getItem("dark") ? "true" === ld.getAttribute("aria-checked") || (ld.setAttribute("aria-checked", "true"),
@@ -167,5 +162,121 @@ function toggleDropdown(t, e, o) {
 }
 
 function fl (num) {
-    for (let i = 0; i<pages.length; i++) {pages[i].textContent = `${num} ${p}`;num++}
+    pages[0].textContent = `${num} ${pm}`;
+    for (let i of pages) {num++;i.textContent = `${num} ${p}`}
+}
+function tot(varr) {
+    const usdVal = Number(varr);
+    const gbpVal = usdVal * exchangeRate;
+    
+    const displayValue = currencyToggle.checked ? `${gbpVal.toFixed(0)}` : `${usdVal.toFixed(0)}`;
+    for (let i of total) { i.textContent = displayValue;}
+}
+
+function updatePaymentSplits() {   
+    const usdInitial = val * 0.3;
+    const usdRemaining = val * 0.7;
+
+    if (currencyToggle.checked === true) {
+        iniPayment.textContent = `${(usdInitial * exchangeRate).toFixed(0)}`;
+        remPayment.textContent = `${(usdRemaining * exchangeRate).toFixed(0)}`;
+    } else {
+        iniPayment.textContent = `${usdInitial.toFixed(0)}`;
+        remPayment.textContent = `${usdRemaining.toFixed(0)}`;
+    }
+}
+
+// function refreshCalculations() {
+//     let pageCount = Number(selii.value.match(/\d+/)) || 1;
+//     let hostingCost = 50; // Default
+
+//     // Logic to determine hosting based on the specific category
+//     if (sel.value === "PE") hostingCost = 50;
+//     else if (sel.value === "EC") hostingCost = 500;
+//     else if (["HS", "CI", "SC"].includes(sel.value)) {
+//         // Get cost from the sub-category config
+//         const config = subTypeConfig[seliii.value];
+//         if (config) hostingCost = config.host;
+//     } else { hostingCost = 250; } // Standard for SB, ED, HC, etc.
+
+//     // Update the Host text in UI
+//     host.textContent = hostingCost;
+
+//     // Calculate Totals
+//     val = 500 * pageCount; // Base project value
+//     let finalTotal = hstchk.checked ? (val + hostingCost) : val;
+
+//     // Update UI Elements
+//     tot(finalTotal.toFixed(0));
+//     updatePaymentSplits();
+//     updateRem();
+// }
+
+function refreshCalculations() {
+    let pageCount = Number(selii.value.match(/\d+/)) || 1;
+    let hostingCostUSD = 50; // Default base in USD
+
+    // 1. Determine base USD hosting cost
+    if (sel.value === "PE") hostingCostUSD = 50;
+    else if (sel.value === "EC") hostingCostUSD = 500;
+    else if (["HS", "CI", "SC"].includes(sel.value)) {
+        const config = subTypeConfig[seliii.value];
+        if (config) hostingCostUSD = config.host;
+    } else {
+        hostingCostUSD = 250;
+    }
+
+    // 2. Handle the Hosting UI display conversion
+    if (currencyToggle.checked) {
+        host.textContent = (hostingCostUSD * exchangeRate).toFixed(0);
+        for (let i of curSym) {i.textContent = '£'}
+    } else {
+        host.textContent = hostingCostUSD;
+        for (let i of curSym) {i.textContent = '$'}
+    }
+
+    // 3. Calculate Totals
+    val = 500 * pageCount; // Base project value in USD
+    let finalTotalUSD = hstchk.checked ? (val + hostingCostUSD) : val;
+
+    // 4. Update the rest of the UI
+    tot(finalTotalUSD.toString());
+    updatePaymentSplits();
+    updateRem();
+    // currencyToggle.checked === true ? curSym.textContent = "£" : curSym.textContent = "$";
+}
+
+// function updateRem () {
+//     let rem = val * 0.7
+//     if (hstchk.checked === false) {
+//         remPayment.textContent = rem.toFixed(0); //tot(val)
+//     }
+//     else if (hstchk.checked === true) {remPayment.textContent = (rem + Number(host.textContent)).toFixed(0);}
+//     if (currencyToggle.checked === true) {
+//         remPayment.textContent = `${(rem * exchangeRate + Number(host.textContent)).toFixed(0)}`;
+//     } else {
+//         remPayment.textContent = `${rem + Number(host.textContent).toFixed()}`;
+//     }
+// }
+
+function updateRem() {
+    // 1. Start with the base 70% of the project value (USD)
+    let remUSD = val * 0.7;
+
+    // 2. Add hosting only if the checkbox is checked
+    // Note: We use the raw 'host' value logic here to keep math consistent
+    if (hstchk.checked === true) {
+        // We calculate what the hosting is in USD first
+        // If your 'host.textContent' is already converted, we need to 'un-convert' it 
+        // OR simply pull the base hosting value. Let's use the UI value logic:
+        remUSD += Number(host.textContent) / (currencyToggle.checked ? exchangeRate : 1);
+    }
+
+    // 3. Final Output: Convert the total USD remainder to the selected currency
+    if (currencyToggle.checked === true) {
+        let remGBP = remUSD * exchangeRate;
+        remPayment.textContent = `${remGBP.toFixed(0)}`;
+    } else {
+        remPayment.textContent = `${remUSD.toFixed(0)}`;
+    }
 }

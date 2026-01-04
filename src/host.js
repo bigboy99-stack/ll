@@ -8,11 +8,12 @@ const hb = document.querySelector("#sb-btn")
 const prj = document.querySelector(".prj")
 const pd2 = document.querySelector(".pd2");
 const ema = document.querySelector("#ema");
+const cp = document.querySelector(".copy");
 // const cs = document.querySelector("#cs");
 // const yt = document.querySelector(".ytd");
 // const vi = document.querySelector(".vi");
 
-ema.onclick = () => {
+cp.onclick = () => {
   ema.select();
   ema.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(ema.value);

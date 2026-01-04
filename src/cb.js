@@ -18,6 +18,7 @@ const f = document.querySelector(".cbf");
 const sub = document.querySelector("#sub");
 const ch = document.querySelector(".cbh");
 const cd = document.querySelector(".cbd");
+const cp = document.querySelector(".copy");
 
 ld.onclick = two;
 hb.onclick = () => {toggleDropdown(hb, sb, "sbb");};
@@ -48,7 +49,7 @@ function initializeTheme() {
     } else {ld.setAttribute("aria-checked", "false");ht.removeAttribute('data-theme');ld.textContent = "dark 🌙";ht.className = 'bl'}
 }
 
-ema.onclick = () => {
+ecopyma.onclick = () => {
   ema.select();
   ema.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(ema.value);

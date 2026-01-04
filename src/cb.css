@@ -3,8 +3,8 @@
   scroll-padding-block: 200px 150px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  --bl: hsl(0, 0%, 99%);
-  --bd: hsl(0, 0%, 2%);
+  --bl: hsl(0, 0%, 98%);
+  --bd: hsl(0, 0%, 4%);
   --l: oklch(95.213% 0.00011 271.152);
   --d: oklch(24.776% 0.00003 271.152);
   --dg: oklch(59.175% 0.20134 142.511);
@@ -17,8 +17,8 @@
   --anim2: color 0.2s ease-in-out 0.1s;
   --bi: background-image 0.2s ease-in-out 0.1s;
   --uls: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0.3s ease-out;
-  --gra: linear-gradient(to right, #00704b 20%, var(--tb) 32%);
-  --grad: linear-gradient(to right, var(--hb) 23%, #00a36d 35%);
+  --gra: linear-gradient(to right, #00880b 30%, var(--tb) 42%);
+  --grad: linear-gradient(to right, var(--hb) 20%, #009c41  40%);
   --transition-duration: 0.8s;
   --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -29,7 +29,7 @@
 .bd {background-color:var(--bd);transition: var(--anim)}
 
 .c {position: relative;margin-inline: auto;max-width: 1000px;width: 93%;}
-.nd {display: flex;position: fixed;top: 14px;left: 50%;transform: translateX(-50%);-webkit-backdrop-filter: blur(4.5px);backdrop-filter: blur(4.5px);
+.nd {display: flex;position: fixed;top: 14px;left: 50%;transform: translateX(-50%);-webkit-backdrop-filter: blur(5px);backdrop-filter: blur(5px);
  background: #ffffff5d;width: 99%;z-index: 20;border-radius: 16px;margin-inline: auto;font-family: "poppins", sans-serif;justify-content: space-between;
  max-width: 1230px;border: 2px solid #bababa33;letter-spacing: 0.1mm;min-height: 60px;}
 .n {display: flex;align-items: center;padding: 0px;height: 57px;gap: 28px;margin-inline-start: 24px;position: relative;}
@@ -39,7 +39,7 @@
 .n a:not(.n > a) {font-weight: 600;display: flex;height: 50px;align-content: center;}
 .prp {font-weight: 500;font-size: 16px;display: flex;align-self: center;color: var(--d);}
 button {border: 1px solid #33333321;box-shadow: -2px 2px 4px #33333399;background: #ffffff76;border-radius: 6px;padding: 6px;min-height: 45px;align-content: center;}
-button:hover {cursor: pointer}
+button:hover, .copy:hover {cursor: pointer}
 #sb-btn {min-height: 43px;margin-inline: 24px 22px;padding-block-end: 1px;}
 .sbs:active, a:active,button:active {transform: scale(0.94);}
 button:focus-visible, a:focus-visible, #cbi:focus-visible {outline: 2px solid var(--b1);outline-offset: 3px;border-radius: 4px;}
@@ -66,7 +66,7 @@ a {text-decoration: none;display: inline-block;letter-spacing: 0.02rem;font-size
 .h1 {font-size: clamp(32px, 10vw + 1rem, 40px);margin: -2px auto 0px auto;-webkit-background-clip: text;background-clip: text;height: max-content;
  background-image: var(--gra);color: transparent;max-width: 380px;text-align: center;}
 .p {margin-block-end: 0px;font-size: 17px;}
-.p1 {max-width: 600px;margin-inline: auto;margin-block: 32px 40px;font-size: 21px;text-align: center;line-height: 1.35;letter-spacing: 0.4px;color: var(--ad);padding: 16px 8px;width: 90%;}
+.p1 {max-width: 600px;margin-inline: auto;font-size: 21px;text-align: center;line-height: 1.35;letter-spacing: 0.4px;color: var(--ad);padding: 16px 8px;width: 90%;}
 
 .cbd {width: 90%;margin: 0px auto 40px auto;max-height: max-content;display: flex;flex-direction: column;padding-block:8px 23px;border-radius: 12px;position: relative;background-color: hsl(0, 0%, 90%);}
 .cbd p {margin: 0px;text-align: center;color: var(--d);font-size: 19px;}
@@ -82,9 +82,9 @@ a {text-decoration: none;display: inline-block;letter-spacing: 0.02rem;font-size
 #sub {background-color: #fff;height: max-content;align-self: flex-end;margin-block-end: 4px;box-shadow: none;color: var(--d);}
 
 #ct {margin: 64px auto 0px auto;}
-#ct p {max-width: max-content;margin-inline: auto;justify-content: center;}
+#ct p {max-width: max-content;margin-inline: auto;justify-content: center;text-align: center;}
+.copy {width: 55px;background-color: white;display: inline-block;margin: 3px;min-height: 40px;font-size: 17px;}
 #ema {width: 176px;min-height: 45px;padding:6px;margin: 1px;display: inline-flex;justify-content: center;border-radius: 8px;font-size: 16px;}
-#ema:hover {cursor: copy;}
 footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 6px;text-align: center;}
 
 [data-theme="dark"] {

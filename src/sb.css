@@ -3,8 +3,8 @@
   scroll-padding-block: 200px 150px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  --bl: hsl(0, 0%, 99%);
-  --bd: hsl(0, 0%, 2%);
+  --bl: hsl(0, 0%, 98%);
+  --bd: hsl(0, 0%, 4%);
   --l: oklch(95.213% 0.00011 271.152);
   --d: oklch(24.776% 0.00003 271.152);
   --dg: oklch(59.175% 0.20134 142.511);
@@ -15,8 +15,8 @@
   --tb: oklch(37.001% 0.1717 262.218);
   --anim: background-color 0.2s ease-in-out 0.1s;
   --anim2: color 0.2s ease-in-out 0.1s;
-  /* --gra: linear-gradient(to right, #00704b 20%, var(--tb) 72%);
-  --grad: linear-gradient(to right, var(--hb) 23%, #00a36d 72%); */
+  /* --gra: linear-gradient(to right, #00880b 30%, var(--tb) 42%);
+  --grad: linear-gradient(to right, var(--hb) 20%, #009c41  40%); */
   --uls: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0.3s ease-out;
   --transition-duration: 0.8s;
   --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);

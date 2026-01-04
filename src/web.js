@@ -15,6 +15,7 @@ const prj = document.querySelector(".prj");
 const pd2 = document.querySelector(".pd2");
 const ema = document.querySelector("#ema");
 const cs = document.querySelector("#cs");
+const cp = document.querySelector(".copy");
 // const yt = document.querySelector(".ytd");
 // const vi = document.querySelector(".vi");
 
@@ -25,7 +26,7 @@ function initializeTheme () {
  if (localStorage.getItem("dark") === "on") {ht.setAttribute('data-theme', 'dark'); ht.className = 'bd'}
  else {ht.removeAttribute('data-theme'); ht.className = 'bl'}
 }
-ema.onclick = () => {
+cp.onclick = () => {
   ema.select();
   ema.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(ema.value);

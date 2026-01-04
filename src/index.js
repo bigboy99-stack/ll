@@ -37,15 +37,9 @@ function toggleDropdown(t, e, o) {
     t.setAttribute("aria-expanded", "false")) : (e.classList.add(o),
     t.setAttribute("aria-expanded", "true"))
 }
-ld.onclick = two
-hb.onclick = () => {
-    toggleDropdown(hb, sb, "sbb")
-}
-
-pd2.onclick = () => {
-    toggleDropdown(pd2, prj, "uls")
-}
-
+ld.onclick = two;
+hb.onclick = () => {toggleDropdown(hb, sb, "sbb")}
+pd2.onclick = () => {toggleDropdown(pd2, prj, "uls")}
 document.addEventListener("keydown", t => {
     "Escape" === t.key && sb.classList.contains("sbb") && toggleDropdown(hb, sb, "sbb"),
     "Escape" === t.key && prj.classList.contains("uls") && toggleDropdown(pd2, prj, "uls")
