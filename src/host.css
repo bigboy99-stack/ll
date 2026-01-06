@@ -3,13 +3,13 @@
   scroll-padding-block: 200px 150px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  --bl: hsl(0, 0%, 98%);
-  --bd: hsl(0, 0%, 4%);
-  --l: oklch(95.213% 0.00011 271.152);
-  --d: oklch(24.776% 0.00003 271.152);
+  --bl: hsl(0, 0%, 99%);
+  --bd: hsl(0, 0%, 3%);
+  --l:hsl(0, 0%, 100%);
+  --d: hsl(0, 0%, 1%);
   --dg: oklch(59.175% 0.20134 142.511);
-  --al: oklch(98.987% 0.01067 204.685);
-  --ad: oklch(23.345% 0.04884 233.963);
+  --al: hsl(186, 100%, 99%);
+  --ad: hsl(0, 0%, 5%);
   --hb: oklch(59.667% 0.22126 258.047);
   --b1: oklch(56.239% 0.24047 264.42);
   --tb: oklch(37.001% 0.1717 262.218);
@@ -47,7 +47,7 @@ a:focus-visible {font-size: 19px;transition: font-size .2s ease-out;outline: 2px
 .uls {visibility: visible;font-weight: 600;opacity: 1;transform: translateY(0);transition: var(--uls);background: #ffffff;border: 2px solid #63636333;border-radius: 12px;padding: 8px;width: max-content;}
 a {text-decoration: none;display: inline-block;letter-spacing: 0.02rem;font-size: 1rem;color: inherit;align-items: center;font-weight: 600;}
 .ld {display: flex;align-items: center;}
-.lb {font-size: 16px;}
+.lb {display: flex;align-items: center;font-size: 16px;font-weight: 500;color: var(--d)}
 
 .sbs {width: 30px;height: 30px;fill: var(--d);margin: 0px;}
 .sb {visibility: hidden;z-index: 1;max-width: max-content;min-width: 60%;height: 100vh;position: fixed;top: 80px;right: 21px;opacity: 0;transform: translateX(100%);transition: var(--uls);}
@@ -64,7 +64,6 @@ a {text-decoration: none;display: inline-block;letter-spacing: 0.02rem;font-size
 .ca, .ba2 {color: #013ac5;}
 h1 {font-size: clamp(32px, 10vw + 1rem, 40px);-webkit-background-clip: text;background-clip: text;height: max-content;margin: 32px auto;background-image: var(--gra);
   color: transparent;max-width: 465px;text-align: center;}
- /*  h2 ==     */
 .p1 {text-align: center;}
 h2 {height: max-content;width: 100%;margin: 48px 0px 24px 4px;color: transparent;-webkit-background-clip: text;background-clip: text;background-image: var(--gra);font-size:32px;text-align: center;}
 h3 {margin-block: 0px 6px;}
@@ -92,7 +91,7 @@ footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 
   .sbs {fill: var(--l);}
   h1, h2 {background-image: var(--grad);transition: var(--bi);}
   .bsp {color: var(--dg);}
-  #ema {background-color: hsl(0, 0%, 8%);color: var(--l);}
+  #ema, .copy {background-color: hsl(0, 0%, 6%);color: var(--l);}
   .ca, .ba2 {color: #00a200;}
 }
 

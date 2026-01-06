@@ -1,26 +1,26 @@
 :root {
-    scroll-behavior: smooth;
-    scroll-padding-block: 200px 150px;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    --bl: hsl(0, 0%, 98%);
-    --bd: hsl(0, 0%, 4%);
-    --l: oklch(95.213% 0.00011 271.152);
-    --d: oklch(24.776% 0.00003 271.152);
-    --dg: oklch(59.175% 0.20134 142.511);
-    --al: oklch(98.987% 0.01067 204.685);
-    --ad: oklch(23.345% 0.04884 233.963);
-    --hb: oklch(59.667% 0.22126 258.047);
-    --b1: oklch(56.239% 0.24047 264.42);
-    --tb: oklch(37.001% 0.1717 262.218);
-    --anim: background-color 0.2s ease-in-out 0.1s;
-    --anim2: color 0.2s ease-in-out 0.1s;
-    --bi: background-image 0.2s ease-in-out 0.1s;
-    --uls: opacity 0.2s ease-out,transform 0.2s ease-out,visibility 0.3s ease-out;
-    --gra: linear-gradient(to right, #00880b 30%, var(--tb) 42%);
-    --grad: linear-gradient(to right, var(--hb) 20%, #009c41  40%);
-    --transition-duration: 0.8s;
-    --transition-easing: cubic-bezier(0.4,0,0.2,1)
+  scroll-behavior: smooth;
+  scroll-padding-block: 200px 150px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --bl: hsl(0, 0%, 99%);
+  --bd: hsl(0, 0%, 3%);
+  --l:hsl(0, 0%, 100%);
+  --d: hsl(0, 0%, 1%);
+  --dg: oklch(59.175% 0.20134 142.511);
+  --al: hsl(186, 100%, 99%);
+  --ad: hsl(0, 0%, 5%);
+  --hb: oklch(59.667% 0.22126 258.047);
+  --b1: oklch(56.239% 0.24047 264.42);
+  --tb: oklch(37.001% 0.1717 262.218);
+  --anim: background-color 0.2s ease-in-out 0.1s;
+  --anim2: color 0.2s ease-in-out 0.1s;
+  --bi: background-image 0.2s ease-in-out 0.1s;
+  --uls: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0.3s ease-out;
+  --gra: linear-gradient(to right, #00880b 30%, var(--tb) 42%);
+  --grad: linear-gradient(to right, var(--hb) 20%, #009c41  40%);
+  --transition-duration: 0.8s;
+  --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {box-sizing: border-box!important}
@@ -104,7 +104,7 @@ audio {border-radius: 8px;min-height: 60px;}
     h3 {color: var(--al)}
     .li {background-color: #060;transition: var(--anim)}
     .pa {color: var(--al)}
-    .at {background-color: #0f0f0f;border: 1px solid hsla(0,0%,95%,.174);box-shadow: -5px 6px 8px hsla(0,0%,95%,.098);transition: var(--anim)}
+    .at {background-color: hsl(0, 0%, 2%);border: 1px solid hsla(0,0%,95%,.174);box-shadow: -5px 6px 8px hsla(0,0%,95%,.098);transition: var(--anim)}
     .aa {color: var(--dg)}
     article p {color: var(--al)}
 }

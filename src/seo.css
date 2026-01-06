@@ -3,13 +3,13 @@
   scroll-padding-block: 200px 150px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  --bl: hsl(0, 0%, 98%);
-  --bd: hsl(0, 0%, 4%);
-  --l: oklch(95.213% 0.00011 271.152);
-  --d: oklch(24.776% 0.00003 271.152);
+  --bl: hsl(0, 0%, 99%);
+  --bd: hsl(0, 0%, 3%);
+  --l:hsl(0, 0%, 100%);
+  --d: hsl(0, 0%, 1%);
   --dg: oklch(59.175% 0.20134 142.511);
-  --al: oklch(98.987% 0.01067 204.685);
-  --ad: oklch(23.345% 0.04884 233.963);
+  --al: hsl(186, 100%, 99%);
+  --ad: hsl(0, 0%, 5%);
   --hb: oklch(59.667% 0.22126 258.047);
   --b1: oklch(56.239% 0.24047 264.42);
   --tb: oklch(37.001% 0.1717 262.218);
@@ -47,7 +47,7 @@ a:focus-visible {font-size: 19px;transition: font-size .2s ease-out;outline: 2px
 .uls {visibility: visible;font-weight: 600;opacity: 1;transform: translateY(0);transition: var(--uls);background: #ffffff;border: 2px solid #63636333;border-radius: 12px;padding: 8px;width: max-content;}
 a {text-decoration: none;display: inline-block;letter-spacing: 0.02rem;font-size: 1rem;color: inherit;align-items: center;font-weight: 600;}
 .ld {display: flex;align-items: center;}
-.lb {font-size: 16px;}
+.lb {display: flex;align-items: center;font-size: 16px;font-weight: 500;color: var(--d)}
 ul {padding-inline-start: 20px;}
 
 
@@ -77,7 +77,7 @@ li {margin-block-start: 2px;color: var(--d);}
 #ct {margin: 64px auto 0px auto;max-width: 700px;}
 #ct p {max-width: max-content;margin-inline: auto;justify-content: center;text-align: center;}
 #ema {width: 176px;min-height: 45px;padding:6px;margin: 1px;display: inline-flex;justify-content: center;border-radius: 8px;font-size: 16px;}
-.copy {width: 55px;background-color: white;display: inline-block;margin: 3px;min-height: 40px;font-size: 17px;}
+.copy {width: 55px;background-color: white;display: inline-block;margin: 3px;min-height: 40px;font-size: 17px;color: var(--d);}
 footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 6px;text-align: center;}
 
 [data-theme="dark"] {
@@ -92,7 +92,7 @@ footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 
   .sbs {fill: var(--l);}
   h1, h2 {background-image: var(--grad);transition: var(--bi);}
   .bsp {color: var(--dg);}
-  #ema {background-color: hsl(0, 0%, 8%);color: var(--l);}
+  #ema, .copy {background-color: hsl(0, 0%, 6%);color: var(--l);}
   .ca, .ba2 {color: #00a200;}
 }
 

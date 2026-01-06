@@ -1,17 +1,11 @@
 document.body.onload = initializeTheme;
-// setTimeout( () => pd2.focus(), 200);
-const ld = document.querySelector(".lb")
 const ht = document.querySelector("html")
 const sb = document.querySelector(".sb")
 const sv = document.querySelector(".sbs")
 const hb = document.querySelector("#sb-btn")
 const prj = document.querySelector(".prj")
-// const pd2 = document.querySelector(".pd2");
 const ema = document.querySelector("#ema");
 const cp = document.querySelector(".copy");
-// const cs = document.querySelector("#cs");
-// const yt = document.querySelector(".ytd");
-// const vi = document.querySelector(".vi");
 
 cp.onclick = () => {
   ema.select();
@@ -19,32 +13,16 @@ cp.onclick = () => {
   navigator.clipboard.writeText(ema.value);
   alert("email address copied: " + ema.value);
 }
-function initializeTheme() {
-    "on" === localStorage.getItem("dark") ? "true" === ld.getAttribute("aria-checked") || (ld.setAttribute("aria-checked", "true"),
-    ht.setAttribute("data-theme", "dark"),
-    ld.textContent = "light ☀️",
-    ht.className = "bd") : (ld.setAttribute("aria-checked", "false"),
-    ht.removeAttribute("data-theme"),
-    ld.textContent = "dark 🌙",
-    ht.className = "bl")
+function initializeTheme () {
+    if (localStorage.getItem("dark") === "on") {ht.setAttribute('data-theme', 'dark'); ht.className = 'bd'}
+    else {ht.removeAttribute('data-theme'); ht.className = 'bl'}
 }
-function two() {
-    "true" === ld.getAttribute("aria-checked") ? (localStorage.setItem("dark", "off"),
-    ld.setAttribute("aria-checked", "false"),
-    ht.removeAttribute("data-theme"),
-    ld.textContent = "dark 🌙",
-    ht.className = "bl") : (localStorage.setItem("dark", "on"),
-    ld.setAttribute("aria-checked", "true"),
-    ht.setAttribute("data-theme", "dark"),
-    ld.textContent = "light ☀️",
-    ht.className = "bd")
-}
+
 function toggleDropdown(t, e, o) {
     "true" === t.getAttribute("aria-expanded") ? (e.classList.remove(o),
     t.setAttribute("aria-expanded", "false")) : (e.classList.add(o),
     t.setAttribute("aria-expanded", "true"))
 }
-ld.onclick = two,
 hb.onclick = () => { toggleDropdown(hb, sb, "sbb")};
 
 document.addEventListener("keydown", t => {
@@ -54,5 +32,5 @@ document.addEventListener("keydown", t => {
 );
 document.addEventListener("click", t => {
     !sb.classList.contains("sbb") || sb.contains(t.target) || hb.contains(t.target) || toggleDropdown(hb, sb, "sbb");
-}
+    }
 );
