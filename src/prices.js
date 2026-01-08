@@ -23,7 +23,6 @@ const remPayment = document.querySelector(".rem");
 const hstchk = document.querySelector("#check");
 const currencyToggle = document.querySelector("#currency-toggle");
 const curSym = Array.from(document.querySelectorAll("#currency-symbol"));
-// const main = document.querySelector("#maintainance");
 const seliii = document.querySelector(".sel-iii");
 let exchangeRate = 0.80;
 let val = 500;
@@ -80,7 +79,7 @@ seliii.onchange = () => {
     selii.selectedIndex = 0;
     const config = subTypeConfig[seliii.value];
     if (config) {
-        fl(config.min); // This updates the "6 Pages", "7 Pages" etc in the dropdown
+        fl(config.min);
     }
     refreshCalculations();
 };
@@ -88,15 +87,10 @@ seliii.onchange = () => {
 selii.onchange = refreshCalculations;
 hstchk.onchange = refreshCalculations;
 currencyToggle.onchange = () => { refreshCalculations(); };
-// if (currencyToggle.checked === true) {
-//     curSym.textContent = "£";
-//     console.log('hiii') 
-//     // host.textContent = (hostingCostUSD * exchangeRate).toFixed(0);
-// } else {
-//     curSym.textContent = "$";
-//     // host.textContent = hostingCostUSD;
-// }
-// currencyToggle.checked === true ? curSym.textContent = "£" : curSym.textContent = "$";
+
+ld.onclick = two;
+hb.onclick = () => {toggleDropdown(hb, sb, "sbb")};
+pd2.onclick = () => {toggleDropdown(pd2, prj, "uls")};
 
 copy[0].onclick = () => {
   btc.select();
@@ -104,14 +98,23 @@ copy[0].onclick = () => {
   navigator.clipboard.writeText(btc.value);
   alert("bitcoin wallet copied to your clip board " + btc.value);
 }
+
 copy[1].onclick = () => {
+    ema.select();
+    ema.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(ema.value);
+    alert
+    ("Copied the email: " + ema.value);
+}
+
+copy[2].onclick = () => {
   btc.select();
   btc.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(btc.value);
   alert("bitcoin wallet copied to your clip board " + btc.value);
 }
 
-copy[2].onclick = () => {
+copy[3].onclick = () => {
   ema.select();
   ema.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(ema.value);
@@ -119,9 +122,6 @@ copy[2].onclick = () => {
   ("Copied the email: " + ema.value);
 }
 
-ld.onclick = two;
-hb.onclick = () => {toggleDropdown(hb, sb, "sbb")};
-pd2.onclick = () => {toggleDropdown(pd2, prj, "uls")};
 document.addEventListener("keydown", t => {
     "Escape" === t.key && sb.classList.contains("sbb") && toggleDropdown(hb, sb, "sbb"),
     "Escape" === t.key && prj.classList.contains("uls") && toggleDropdown(pd2, prj, "uls")
@@ -163,7 +163,7 @@ function toggleDropdown(t, e, o) {
 
 function fl (num) {
     pages[0].textContent = `${num} ${pm}`;
-    for (let i of pages) {num++;i.textContent = `${num} ${p}`}
+    for (let i = 1; i<pages.length; i++) {num++;pages[i].textContent = `${num} ${p}`;}
 }
 function tot(varr) {
     const usdVal = Number(varr);
@@ -185,32 +185,6 @@ function updatePaymentSplits() {
         remPayment.textContent = `${usdRemaining.toFixed(0)}`;
     }
 }
-
-// function refreshCalculations() {
-//     let pageCount = Number(selii.value.match(/\d+/)) || 1;
-//     let hostingCost = 50; // Default
-
-//     // Logic to determine hosting based on the specific category
-//     if (sel.value === "PE") hostingCost = 50;
-//     else if (sel.value === "EC") hostingCost = 500;
-//     else if (["HS", "CI", "SC"].includes(sel.value)) {
-//         // Get cost from the sub-category config
-//         const config = subTypeConfig[seliii.value];
-//         if (config) hostingCost = config.host;
-//     } else { hostingCost = 250; } // Standard for SB, ED, HC, etc.
-
-//     // Update the Host text in UI
-//     host.textContent = hostingCost;
-
-//     // Calculate Totals
-//     val = 500 * pageCount; // Base project value
-//     let finalTotal = hstchk.checked ? (val + hostingCost) : val;
-
-//     // Update UI Elements
-//     tot(finalTotal.toFixed(0));
-//     updatePaymentSplits();
-//     updateRem();
-// }
 
 function refreshCalculations() {
     let pageCount = Number(selii.value.match(/\d+/)) || 1;
@@ -243,21 +217,7 @@ function refreshCalculations() {
     tot(finalTotalUSD.toString());
     updatePaymentSplits();
     updateRem();
-    // currencyToggle.checked === true ? curSym.textContent = "£" : curSym.textContent = "$";
 }
-
-// function updateRem () {
-//     let rem = val * 0.7
-//     if (hstchk.checked === false) {
-//         remPayment.textContent = rem.toFixed(0); //tot(val)
-//     }
-//     else if (hstchk.checked === true) {remPayment.textContent = (rem + Number(host.textContent)).toFixed(0);}
-//     if (currencyToggle.checked === true) {
-//         remPayment.textContent = `${(rem * exchangeRate + Number(host.textContent)).toFixed(0)}`;
-//     } else {
-//         remPayment.textContent = `${rem + Number(host.textContent).toFixed()}`;
-//     }
-// }
 
 function updateRem() {
     // 1. Start with the base 70% of the project value (USD)

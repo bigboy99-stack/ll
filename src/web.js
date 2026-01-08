@@ -9,6 +9,7 @@ setTimeout(()=>alert(`this website can only navigate with keyboard buttons.
    Typically simulating a disabled user point of view`), 1300);
 const ht = document.querySelector("html");
 const sb = document.querySelector(".sb");
+const ld = document.querySelector(".lb");
 const sv = document.querySelector(".sbs");
 const hb = document.querySelector("#sb-btn");
 const prj = document.querySelector(".prj");
@@ -16,11 +17,22 @@ const pd2 = document.querySelector(".pd2");
 const ema = document.querySelector("#ema");
 const cs = document.querySelector("#cs");
 const cp = document.querySelector(".copy");
-// const yt = document.querySelector(".ytd");
-// const vi = document.querySelector(".vi");
 
 hb.onclick = () => {toggleDropdown(hb, sb, "sbb");};
 pd2.onclick = () => {toggleDropdown(pd2, prj, "uls");};
+ld.onclick = two;
+
+function two() {
+  "true" === ld.getAttribute("aria-checked") ? (localStorage.setItem("dark", "off"),
+  ld.setAttribute("aria-checked", "false"),
+  ht.removeAttribute("data-theme"),
+  ld.textContent = "dark 🌙",
+  ht.className = "bl") : (localStorage.setItem("dark", "on"),
+  ld.setAttribute("aria-checked", "true"),
+  ht.setAttribute("data-theme", "dark"),
+  ld.textContent = "light ☀️",
+  ht.className = "bd")
+}
 
 function initializeTheme () {
  if (localStorage.getItem("dark") === "on") {ht.setAttribute('data-theme', 'dark'); ht.className = 'bd'}

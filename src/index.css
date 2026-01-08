@@ -4,7 +4,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   --bl: hsl(0, 0%, 99%);
-  --bd: hsl(0, 0%, 3%);
+  --bd: hsl(0, 0%, 2%);
   --l:hsl(0, 0%, 100%);
   --d: hsl(0, 0%, 1%);
   --dg: oklch(59.175% 0.20134 142.511);
@@ -30,7 +30,7 @@
 .bd {background-color: var(--bd)}
 .c {max-width: 1000px;position: relative;width: 93%}
 .c,.nd {margin-inline:auto}
-.nd {-webkit-backdrop-filter: blur(5px);backdrop-filter: blur(5px);background: #ffffff5d;border: 2px solid #bababa33;border-radius: 16px;font-family: poppins,sans-serif;
+.nd {-webkit-backdrop-filter: blur(5px);backdrop-filter: blur(5px);background: #ffffff50;border: 2px solid #bababa33;border-radius: 16px;font-family: poppins,sans-serif;
   justify-content: space-between;left: 50%;letter-spacing: .1mm;max-width: 1230px;min-height: 60px;position: fixed;top: 14px;transform: translateX(-50%);width: 99%;z-index: 20}
 .n,.nd {display: flex}
 .n {align-items: center;gap: 28px;height: 57px;margin-inline-start:24px;padding: 0;position: relative}
@@ -55,7 +55,7 @@ a {align-items: center;color: inherit;display: inline-block;font-size: 1rem;lett
 .sbs {fill: var(--d);height: 30px;margin: 0;width: 30px}
 .sb {height: 100vh;max-width: max-content;min-width: 60%;opacity: 0;position: fixed;right: 0;top: 20px;transform: translateX(100%);visibility: hidden;z-index: 5}
 .sb,.sbb {transition: var(--uls)}
-.sbb {-webkit-backdrop-filter: blur(4.5px);backdrop-filter: blur(4.5px);background: none;border: 3px solid #63636333;border-radius: 12px;opacity: 1;transform: translateX(0);visibility: visible}
+.sbb {visibility: visible;opacity: 1; transform: translateX(0);background-color: #ffffff4f;transition: var(--uls);border-radius: 12px;-webkit-backdrop-filter: blur(8px);backdrop-filter: blur(8px);border: 3px solid #63636333;}
 .sbc {margin-block-start:60px}
 .sb li {font-size: 21px;font-weight: 600;padding-block:14px}
 .sb ul {margin-block-start:13px;padding-inline:32px 16px}
@@ -90,7 +90,7 @@ article p {color: var(--ad);line-height: 1.3;margin-block-end:4px}
 .wh {color: var(--l);transition: var(--anim2)}
 audio {border-radius: 8px;min-height: 60px;}
 [data-theme=dark] {
-    .nd {background-color: #61616152;border: 2px solid hsla(0,0%,68%,.224);transition: var(--anim)}
+    .nd {background-color: hsla(0, 0%, 38%, 0.322);border: 2px solid hsla(0,0%,68%,.224);transition: var(--anim)}
     .ftd,.lb,.ld,.n a,.prp,.sb li,.sm, .h3, .ad, .atd {color: var(--l);transition: var(--anim2)}
     button {background: #0000002a;border: 1px solid #dedede39;box-shadow: -2px 2px 4px #d1d1d133}
     a:focus-visible, button:focus-visible {outline:2px solid var(--dg);outline-offset: 3px}

@@ -1,17 +1,14 @@
 document.body.onload = initializeTheme;
-// setTimeout( () => pd2.focus(), 200);
 const ld = document.querySelector(".lb")
 const ht = document.querySelector("html")
 const sb = document.querySelector(".sb")
 const sv = document.querySelector(".sbs")
 const hb = document.querySelector("#sb-btn")
 const prj = document.querySelector(".prj")
-// const pd2 = document.querySelector(".pd2");
 const ema = document.querySelector("#ema");
 const cp = document.querySelector(".copy");
-// const cs = document.querySelector("#cs");
-// const yt = document.querySelector(".ytd");
-// const vi = document.querySelector(".vi");
+const slides = document.querySelectorAll('.slide');
+const container = document.querySelector('.testimonial-slider');
 
 cp.onclick = () => {
   ema.select();
@@ -56,3 +53,21 @@ document.addEventListener("click", t => {
     !sb.classList.contains("sbb") || sb.contains(t.target) || hb.contains(t.target) || toggleDropdown(hb, sb, "sbb");
 }
 );
+
+
+
+let currentIndex = 0;
+let isPaused = false;
+
+function showNextSlide() {
+    if (!isPaused) {
+        slides[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % slides.length; 
+        slides[currentIndex].classList.add('active');
+    }
+}
+
+// Change slide every 4 seconds
+let slideInterval = setInterval(showNextSlide, 5000);
+container.addEventListener('mouseenter', () => isPaused = true);
+container.addEventListener('mouseleave', () => isPaused = false);
