@@ -9,7 +9,7 @@
     "minify:css": "for %f in (src\\*.css) do (postcss -o \"dist/%~nf.css\" \"%f\")",
     "minify:html": "for %f in (src\\*.html) do (html-minifier-terser --collapse-whitespace --remove-comments \"%f\" -o \"dist/%~nf.html\")",
     "bes:js": "for %f in (src\\bespokeJoinery\\*.js) do (terser \"%f\" -o \"dist/bespokeJoinery/%~nf.js\" -c -m)",
-    "bes:css": "for %f in (src\\bespokeJoinery\\*.css) do (postcss -o \"dist/bespokeJoinery/%~nf.css\" \"%f\")",
+    "bes:css": "for %f in (src\\bespokeJoinery\\besProject.css) do (postcss -o \"dist/bespokeJoinery/%~nf.css\" \"%f\")",
     "bes:html": "for %f in (src\\bespokeJoinery\\besProject.html) do (html-minifier-terser --collapse-whitespace --remove-comments \"%f\" -o \"dist/bespokeJoinery/%~nf.html\")",
     "build": "npm run minify:js & npm run minify:css & npm run minify:html",
     "besbuild": "npm run bes:js & npm run bes:css & npm run bes:html"
