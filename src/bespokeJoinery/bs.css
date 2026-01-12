@@ -64,11 +64,11 @@ ul {padding-inline-start: 20px;}
 .srv-img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
 .sb ul {padding-inline: 32px 16px;margin-block-start: 13px;}
  
-.bread {margin: 90px auto 16px auto; width: max-content;}
+.bread {margin: 90px auto 16px auto; width: max-content;position: relative;}
 .bread a {font-size: 19px;padding-inline-end: 4px;}
 
-.bsp {font-size: 16px;position: absolute;color: var(--dg1);}
-.ba2 {padding-inline-start: 17px;}
+.bsp {font-size: 28px;position: absolute;color: var(--dg1);bottom: -3px;}
+.ba2 {padding-inline-start: 21px;}
 .ca, .ba2 {color: var(--dg1);}
 #md {width: 90%;margin-inline: auto;z-index: -1;}
 h1 {font-size: clamp(32px, 10vw + 1rem, 56px);margin: 0px auto;padding: 4px;;-webkit-background-clip: text;background-clip: text;height: max-content;
@@ -81,14 +81,14 @@ p, li {margin-block-end: 2px;font-size: 17px;letter-spacing: 0.02rem; line-heigh
  
 img {display: inline-block;margin-block: 4px;border-radius: 6px;}
 #ct {margin: 64px auto 0px auto;max-width: 700px; text-align: center;}
-#ct p {max-width: max-content;margin-inline: auto;justify-content: center;text-align: center;}
+#ct p {max-width: max-content;margin-inline: auto;justify-content: center;text-align: center;border: 1px solid #33333321;box-shadow: -2px 2px 4px #33333399;background: #ffffff76;padding: 10px;border-radius: 8px;}
 #ema {width: 250px;min-height: 45px;padding:6px;margin: 1px;display: inline-flex;justify-content: center;border-radius: 8px;font-size: 16px;text-align: center;border: 1px solid #d9d9d9;}
 footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 6px;text-align: center; opacity: 0.7;}
 
 [data-theme="dark"] {
    .nd {background-color: #61616152;border: 2px solid hsla(0,0%,68%,.224);transition: var(--anim)}
    .n a, .sb li, footer, p, .lb, li {color: var(--l) !important;transition: var(--anim2) }
-   button {box-shadow: -2px 2px 4px #9b9b9b33;border: 1px solid #dedede39;background: #0000002a;}
+   button, #ct p   {box-shadow: -2px 2px 4px #9b9b9b33;border: 1px solid #dedede39;background: #0000002a;}
    .sbs {fill: white;}
    .sbb {background-color: #1919192e;color: var(--l);border: 3px solid #d9d9d933;}
    .ca, .ba2, .bsp {color: #CD853F;}

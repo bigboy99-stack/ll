@@ -59,11 +59,11 @@ a {text-decoration: none;display: inline-block;letter-spacing: 0.02rem;font-size
 ul {padding-inline-start: 20px;}
 .li1, .li2 {display: none;}
 
-.bread {margin: 90px auto 16px auto; width: max-content;}
+.bread {margin: 90px auto 16px auto; width: max-content;position: relative;}
 .bread a {font-size: 19px;padding-inline-end: 4px;}
 
-.bsp {font-size: 16px;position: absolute;color: var(--dg1);}
-.ba2 {padding-inline-start: 17px;}
+.bsp {font-size: 28px;position: absolute;color: var(--dg1);bottom: -3px;}
+.ba2 {padding-inline-start: 21px;}
 .ca, .ba2 {color: var(--dg1);}
 #md {width: 90%;margin-inline: auto;z-index: -1;}
 h1 {font-size: clamp(32px, 10vw + 1rem, 56px);margin: 0px auto;padding: 4px;;-webkit-background-clip: text;background-clip: text;height: max-content;

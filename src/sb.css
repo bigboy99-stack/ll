@@ -54,11 +54,12 @@ a {text-decoration: none;display: inline-block;letter-spacing: 0.02rem;font-size
 .sbc {margin-block-start:60px}
 .sb li {font-size: 21px;font-weight: 600;padding-block:14px}
 .sb ul {margin-block-start:13px;padding-inline:32px 16px}
-.bread {z-index: -5;}
-.bread a {font-size: 19px;padding-inline-end: 4px;z-index: -6;}
-.bsp {font-size: 16px;position: absolute;color: #013ac5;}
-.ba2 {padding-inline-start: 17px;}
+.bread {z-index: -5;width: max-content;position: relative;}
+.bread a {font-size: 19px;padding-inline-end: 4px;}
+.bsp {font-size: 28px;position: absolute;color:#013ac5;bottom: -3px;}
+.ba2 {padding-inline-start: 21px;}
 .ca, .ba2 {color: #013ac5;}
+
 .h1 {font-size: clamp(28px, 10vw + 1rem, 40px);margin: 12px auto;height: max-content;max-width: 465px;text-align: center;color: #013ac5;}
 
 .main {margin: 88px 0px 32px 4px;}

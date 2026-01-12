@@ -38,7 +38,7 @@ const subTypeConfig = {
     'roofing': { min: 8, host: 400 },
     'septic': { min: 6, host: 300 },
     'foundation': { min: 10, host: 500 },
-    'scaffolding': { min: 5, host: 250 },
+    'scaffolding': { min: 6, host: 300 },
     'commercial': { min: 7, host: 350 },
     'bespoke': { min: 6, host: 300 }
 };

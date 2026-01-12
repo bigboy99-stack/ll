@@ -1,29 +1,35 @@
 :root {
-   scroll-behavior: smooth;
-   scroll-padding-block: 200px 150px;
-   text-rendering: optimizeLegibility;
-   -webkit-font-smoothing: antialiased;
-   /* Palette Update: Warm Wood Tones instead of Finance Green */
-   --bl: hsl(30, 20%, 99%); /* Warm Off-white */
-   --bd: hsl(30, 10%, 3%);  /* Deep Brown-Black */
-   --l:hsl(0, 0%, 100%);
-   --d: hsl(0, 0%, 1%);
-   --dg1: #a05a2c; /* Wood/Amber Color */
-   --dg: oklch(60% 0.15 50); /* Oklch Amber */
-   --al: oklch(98% 0.01 50);
-   --ad: oklch(25% 0.05 50);
-   --hb: oklch(50% 0.15 40); /* Warm Highlight */
-   --b1: oklch(56% 0.15 40); 
-   --tb: oklch(37% 0.10 40);
-   --anim: background-color 0.2s ease-in-out 0.1s;
-   --anim2: color 0.2s ease-in-out 0.1s;
-   --bi: background-image 0.2s ease-in-out 0.1s;
-   --uls: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0.3s ease-out;
-   /* Gradients updated to Earthy Tones */
-   --gra: linear-gradient(to right, #8B4513 30%, #c66b2f 42%);
-   --grad: linear-gradient(to right, #CD853F 20%, #df6914 40%);
-   --transition-duration: 0.8s;
-   --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+    scroll-behavior: smooth;
+    scroll-padding-block: 200px 150px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+
+    /* Scaffolding Palette: Steel, Safety Yellow, and Asphalt */
+    --bl: hsl(210, 15%, 99%);  /* Clean Steel-tinted White */
+    --bd: hsl(210, 20%, 3%);   /* Deep Midnight Blue/Black */
+    --l: hsl(0, 0%, 100%);
+    --d: hsl(210, 30%, 1%);   /* Dark Slate */
+    
+    /* Branding: Safety Yellow & Industrial Orange */
+    --dg1: #eab308;           /* High-Vis Safety Yellow (Tailwind yellow-500) */
+    --dg: oklch(75% 0.15 85);  /* Oklch Safety Gold */
+    --al: oklch(98% 0.01 210);
+    --ad: oklch(25% 0.05 210);
+    --hb: oklch(65% 0.20 70);  /* Industrial Orange Highlight */
+    --b1: oklch(60% 0.18 70); 
+    --tb: oklch(40% 0.10 210); /* Steel Blue shadow */
+
+    --anim: background-color 0.2s ease-in-out 0.1s;
+    --anim2: color 0.2s ease-in-out 0.1s;
+    --bi: background-image 0.2s ease-in-out 0.1s;
+    --uls: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0.3s ease-out;
+
+    /* Gradients: Caution Yellow to Industrial Orange */
+    --gra: linear-gradient(to right, #2d3748 30%, #4a5568 42%); /* Slate Steel Header */
+    --grad: linear-gradient(to right, #facc15 20%, #eab308 40%); /* High-Vis Button/H1 */
+
+    --transition-duration: 0.8s;
+    --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {box-sizing: border-box !important;}
@@ -35,7 +41,7 @@
 .nd {display: flex;-webkit-backdrop-filter: blur(5px);backdrop-filter: blur(5px);
    background: #ffffff50; width: 99%;z-index: 10;border-radius: 16px;margin-inline: auto;font-family: "poppins", sans-serif;justify-content: space-between;
    max-width: 1230px;border: 1px solid rgba(0,0,0,0.1);letter-spacing: 0.1mm;min-height: 60px;position: fixed;top: 14px;left: 50%;transform: translateX(-50%);}
-.n {display: flex;align-items: center;padding: 0px;height: 57px;gap: 28px;margin-inline-start: 24px;position: relative;justify-content: space-between;}
+.n {display: flex;align-items: center;padding: 0px;height: 57px;gap: 28px;margin-inline-start: 19px;position: relative;justify-content: space-between;}
 .n a:not(.n > a) {font-weight: 600;display: flex;height: 50px;align-content: center;}
 
 button {border: 1px solid #33333321;box-shadow: -2px 2px 4px #33333399;background: #ffffff76;border-radius: 6px;padding: 6px;min-height: 45px;align-content: center;letter-spacing: 0.6px;}
@@ -132,18 +138,20 @@ footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 
    blockquote {background: #1e1e1e; color: var(--l);}
 }
 
-@media screen and (max-width: 638px) {.na3 {display:none} .li1{display: list-item;}}
+@media (max-width: 843px) { .na5 { display: none; } .li3 { display: list-item; } }
+@media (max-width: 768px) { .c { padding: 10px; } .lb { width: 100%; } }
+@media (max-width: 691px) { .na4 { display: none; } .li2 { display: list-item; } }
 @media screen and (max-width: 544px) { 
    .c{width: 90%;margin-inline: auto;}
+   .na3 {display:none} .li1{display: list-item;}
    .h1 {font-size: 36px;} 
    h2 {width: 100%;font-size: 27px;} 
    .ful {display: flex; flex-direction: column;}
    #md {width: 99%;} 
-   .li2 {display: list-item;}
    .after, section {margin-inline-start: 0px;} 
    #ct {width: 99%;}
    .type {width: 100%;}
 }
-@media screen and (max-width: 456px) {  .na2 {display:none}}
+/* @media screen and (max-width: 456px) {  .na2 {display:none}} */
 @media screen and (max-width: 321px) { .sbs {margin-inline: 16px 20px;} .n {margin-inline-start: 20px;}}
 @media (prefers-reduced-motion: reduce) {:root {--anim: none;--anim2: none;--uls: none;}}
