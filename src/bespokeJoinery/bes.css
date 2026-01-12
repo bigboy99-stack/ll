@@ -143,6 +143,6 @@ footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 
    #ct {width: 99%;}
    .type {width: 100%;}
 }
-@media screen and (max-width: 456px) {  .na2 {display:none} .li2 {display: list-item;}}
+/* @media screen and (max-width: 456px) {   .li2 {display: list-item;}} */
 @media screen and (max-width: 321px) { .sbs {margin-inline: 16px 20px;} .n {margin-inline-start: 20px;}}
 @media (prefers-reduced-motion: reduce) {:root {--anim: none;--anim2: none;--uls: none;}}
