@@ -78,7 +78,13 @@
  li {margin-block-start: 2px;}
  p, li {margin-block-end: 2px;font-size: 17px;letter-spacing: 0.02rem; line-height: 1.6;}
  .copy {width: 55px;background-color: white;display: inline-block;margin: 3px;font-size: 17px;color: var(--d);}
-  
+
+
+ .modal { display: none; position: fixed; z-index: 1000; padding-top: 50px;padding-inline: 10px; left: 0; top: 0; width: 100%; height: 100vh; overflow: auto; background-color: rgba(0,0,0,0.9); backdrop-filter: blur(5px); }
+ .modal-content { margin: auto; display: block; width: auto; max-width: 1000px; border: 2px solid #d4af37; border-radius: 4px; animation: zoom 0.3s ease;height: 91%;}
+ #caption { margin: auto; display: block; width: 80%; max-width: 700px; text-align: center; color: #ccc; padding: 15px 0; font-size: 1.1rem; }
+ .close-modal { position: absolute; top: 10px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; } 
+
  img {display: inline-block;margin-block: 4px;border-radius: 6px;}
  #ct {margin: 64px auto 0px auto;max-width: 700px; text-align: center;}
  #ct p {max-width: max-content;margin-inline: auto;justify-content: center;text-align: center;}
@@ -100,12 +106,14 @@
  
  @media screen and (max-width: 638px) {.li1{display: list-item;}}
  @media screen and (max-width: 544px) { 
-    .c{width: 90%;margin-inline: auto;}
+    .c{margin-inline: auto;}
     h1 {font-size: 36px;} 
     h2 {width: 100%;font-size: 27px;} 
    .ful {display: flex; flex-direction: column;}
-    #md {width: 99%;} 
-    #ct {width: 99%;}
+    #md, #ct {width: 99%;} 
+    .modal {padding-block-start: 230px;}
+    .close-modal {top: 4px;right: 20px;}
+    .modal-content {width: 95%;height: auto;}
  }
  @media screen and (max-width: 321px) { .sbs {margin-inline: 16px 20px;} .n {margin-inline-start: 20px;}}
  @media (prefers-reduced-motion: reduce) {:root {--anim: none;--anim2: none;--uls: none;}}

@@ -68,6 +68,40 @@ function showNextSlide() {
 }
 
 // Change slide every 4 seconds
-let slideInterval = setInterval(showNextSlide, 5000);
+let slideInterval = setInterval(showNextSlide, 3500);
 container.addEventListener('mouseenter', () => isPaused = true);
 container.addEventListener('mouseleave', () => isPaused = false);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("fullImg");
+    const captionText = document.getElementById("caption");
+    const closeBtn = document.querySelector(".close-modal");
+
+    // Select all images with class srv-img
+    document.querySelectorAll('.srv-img').forEach(img => {
+        img.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+    });
+
+    document.querySelectorAll('.sl-img').forEach(img => {
+        img.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+    });
+
+    // Close when "X" is clicked
+    closeBtn.onclick = () => modal.style.display = "none";
+
+    // Close when clicking anywhere outside the image
+    window.onclick = (event) => {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});

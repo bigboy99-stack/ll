@@ -34,3 +34,29 @@ document.addEventListener("click", t => {
     !sb.classList.contains("sbb") || sb.contains(t.target) || hb.contains(t.target) || toggleDropdown(hb, sb, "sbb");
     }
 );
+
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("fullImg");
+    const captionText = document.getElementById("caption");
+    const closeBtn = document.querySelector(".close-modal");
+
+    // Select all images with class srv-img
+    document.querySelectorAll('.srv-img').forEach(img => {
+        img.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+    });
+
+    // Close when "X" is clicked
+    closeBtn.onclick = () => modal.style.display = "none";
+
+    // Close when clicking anywhere outside the image
+    window.onclick = (event) => {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});

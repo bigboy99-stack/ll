@@ -64,8 +64,8 @@ ul {padding-inline-start: 20px;}
 img {display: inline-block;margin-block: 4px;border-radius: 6px;height: 92%;}
 .srv-img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;cursor: pointer; transition: 0.3s;}
 .srv-img:hover { opacity: 0.8; transform: scale(1.02); }
-.modal { display: none; position: fixed; z-index: 1000; padding-top: 230px;padding-inline: 10px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); backdrop-filter: blur(5px); }
-.modal-content { margin: auto; display: block; width: 80%; max-width: 1000px; border: 2px solid #d4af37; border-radius: 4px; animation: zoom 0.3s ease; }
+.modal { display: none; position: fixed; z-index: 1000; padding-top: 50px;padding-inline: 10px; left: 0; top: 0; width: 100%; height: 100vh; overflow: auto; background-color: rgba(0,0,0,0.9); backdrop-filter: blur(5px); }
+.modal-content { margin: auto; display: block; width: auto; max-width: 1000px; border: 2px solid #d4af37; border-radius: 4px; animation: zoom 0.3s ease;height: 91%;}
 #caption { margin: auto; display: block; width: 80%; max-width: 700px; text-align: center; color: #ccc; padding: 15px 0; font-size: 1.1rem; }
 .close-modal { position: absolute; top: 10px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; }
 .sb ul {padding-inline: 32px 16px;margin-block-start: 13px;}
@@ -107,13 +107,16 @@ footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 
 @media (max-width: 700px) { .modal-content { width: 95%; } }
 @media screen and (max-width: 638px) {.li1{display: list-item;}}
 @media screen and (max-width: 544px) { 
-    .c{width: 90%;margin-inline: auto;}
+    .c{margin-inline: auto;}
     h1 {font-size: 36px;} 
     h2 {width: 100%;font-size: 27px;} 
     .ful {display: flex; flex-direction: column;}
     #md, #ct {width: 99%;} 
     img {height: auto;}
     .close-modal {top: 4px;right: 20px;}
+    .modal {padding-block-start: 230px;}
+    .close-modal {top: 4px;right: 20px;}
+    .modal-content {width: 95%;height: auto;}
 }
 @media screen and (max-width: 321px) { .sbs {margin-inline: 16px 20px;} .n {margin-inline-start: 20px;}}
 @media (prefers-reduced-motion: reduce) {:root {--anim: none;--anim2: none;--uls: none;}}

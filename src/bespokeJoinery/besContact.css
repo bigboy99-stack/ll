@@ -111,11 +111,10 @@ footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 
 @media (max-width: 768px) { .c { padding: 10px; } .lb { width: 100%; } }
 @media screen and (max-width: 638px) {.na3 {display:none} .li1{display: list-item;}}
 @media screen and (max-width: 544px) { 
-    .c{width: 90%;margin-inline: auto;}
+    .c{margin-inline: auto;}
     h1 {font-size: 36px;} 
     h2 {width: 100%;font-size: 27px;} 
     #md {width: 99%;} 
-    /* .na2 {display:none} */
     .li2 {display: list-item;}
     section {margin-inline-start: 0px;} 
     .ct {width: 99%;}
