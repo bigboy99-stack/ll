@@ -137,6 +137,8 @@ footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 
    blockquote {background: #1e1e1e; color: var(--l);}
 }
 
+@keyframes zoom { from {transform:scale(0)} to {transform:scale(1)} }
+@media screen and (max-width: 718px) {.na4 {display:none} .li2{display: list-item;}}
 @media screen and (max-width: 638px) {.na3 {display:none} .li1{display: list-item;}}
 @media screen and (max-width: 544px) { 
    .c{margin-inline: auto;}

@@ -71,3 +71,37 @@ document.addEventListener('click', (e) => {
   // Close Projects dropdown if click is outside the button (pd2) and the menu (prj)
   if (prj.classList.contains('uls') && !prj.contains(e.target) && !pd2.contains(e.target)) {toggleDropdown(pd2, prj, "uls");}
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("fullImg");
+  const captionText = document.getElementById("caption");
+  const closeBtn = document.querySelector(".close-modal");
+
+  // Select all images with class srv-img
+  document.querySelectorAll('.srv-img').forEach(img => {
+      img.onclick = function() {
+          modal.style.display = "block";
+          modalImg.src = this.src;
+          captionText.innerHTML = this.alt;
+      }
+  });
+
+  document.querySelectorAll('.sl-img').forEach(img => {
+      img.onclick = function() {
+          modal.style.display = "block";
+          modalImg.src = this.src;
+          captionText.innerHTML = this.alt;
+      }
+  });
+
+  // Close when "X" is clicked
+  closeBtn.onclick = () => modal.style.display = "none";
+
+  // Close when clicking anywhere outside the image
+  window.onclick = (event) => {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+});

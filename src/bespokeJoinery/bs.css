@@ -55,7 +55,7 @@ a {text-decoration: none;display: inline-block;letter-spacing: 0.02rem;font-size
 .sb li {font-size: 21px;font-weight: 600;padding-block:14px}
 .sb ul {margin-block-start:13px;padding-inline:32px 16px}
 ul {padding-inline-start: 20px;}
-.li1, .li2  {display: none;}
+.li1  {display: none;}
  
 /* Services Grid Modernization */
 .ful {display: grid;grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));gap: 20px;background-color: transparent;border: none;box-shadow: none;padding: 0;margin-block-end: 24px;}
@@ -103,16 +103,17 @@ footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 
    #ema, .copy, select {background-color: hsl(0, 0%, 6%);color: var(--l); border: 1px solid #444;border: 1px solid #444;}
 }
 
-@media screen and (max-width: 638px) {.li1{display: list-item;}}
+@keyframes zoom { from {transform:scale(0)} to {transform:scale(1)} }
 @media screen and (max-width: 544px) { 
    .c{margin-inline: auto;}
    h1 {font-size: 36px;} 
    h2 {width: 100%;font-size: 27px;} 
-  .ful {display: flex; flex-direction: column;}
+   .ful {display: flex; flex-direction: column;}
    #md, #ct {width: 99%;} 
    .modal {padding-block-start: 230px;}
    .close-modal {top: 4px;right: 20px;}
    .modal-content {width: 95%;height: auto;}
 }
+@media screen and (max-width: 536px) {.li1{display: list-item;} .na3 {display: none;}}
 @media screen and (max-width: 321px) { .sbs {margin-inline: 16px 20px;} .n {margin-inline-start: 20px;}}
 @media (prefers-reduced-motion: reduce) {:root {--anim: none;--anim2: none;--uls: none;}}
