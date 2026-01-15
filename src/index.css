@@ -97,8 +97,7 @@ audio {border-radius: 8px;min-height: 60px;}
     .prs {fill: var(--dg);margin: 2px 0 0 4px}
     .prj {background-color: #191919;border: 2px solid #9e9e9e33;color: var(--l);transition: var(--anim)}
     .uls {transition: var(--uls)}
-    .sb {border: 3px solid #90909039}
-    .pt,.sbs,.sv {fill: var(--l)}
+    .sbb {background-color: #19191935;color: var(--l);border: 3px solid #d9d9d933;}    .pt,.sbs,.sv {fill: var(--l)}
     .hh,h1 {background-image: var(--grad);transition: var(--bi)}
     .ptt {fill: #000}
     h3 {color: var(--al)}

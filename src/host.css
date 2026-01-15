@@ -88,7 +88,6 @@ footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 
   .prj {background-color: #191919;color: var(--l);border: 3px solid #d9d9d933;transition: var(--anim);}
   .sbb {background-color: #19191935;color: var(--l);border: 3px solid #d9d9d933;}
   .uls {transition: var(--uls);}
-  .sb {border: 3px solid #90909039;}
   .sbs {fill: var(--l);}
   h1, h2 {background-image: var(--grad);transition: var(--bi);}
   .bsp {color: var(--dg);}

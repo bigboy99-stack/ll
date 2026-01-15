@@ -5,9 +5,9 @@ wrangler.toml
 worker.js
 former
 projects
-src/septicTank
-src/roofers
+src/roofing
 src/scaffoldingHire
-dist/septicTank
+src/septicTank
 dist/roofing
 dist/scaffoldingHire
+dist/septicTank
