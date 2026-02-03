@@ -26,6 +26,7 @@ const curSym = Array.from(document.querySelectorAll("#currency-symbol"));
 const seliii = document.querySelector(".sel-iii");
 let exchangeRate = 0.80;
 let val = 500;
+let hostingPrice = 30;
 
 // const sa = ["SB","EC","ED","HC","RE","PE","EN","LF", 'HS', "CI", "BJ"];
 const pm = "PAGES MINIMUM";
@@ -174,8 +175,8 @@ function tot(varr) {
 }
 
 function updatePaymentSplits() {   
-    const usdInitial = val * 0.3;
-    const usdRemaining = val * 0.7;
+    const usdInitial = val * 0.4;
+    const usdRemaining = val * 0.6;
 
     if (currencyToggle.checked === true) {
         iniPayment.textContent = `${(usdInitial * exchangeRate).toFixed(0)}`;
@@ -188,18 +189,11 @@ function updatePaymentSplits() {
 
 function refreshCalculations() {
     let pageCount = Number(selii.value.match(/\d+/)) || 1;
-    let hostingCostUSD = 50; // Default base in USD
+    let hostingCostUSD = 30; // Default base in USD
 
     // 1. Determine base USD hosting cost
-    if (sel.value === "PE") hostingCostUSD = 50;
-    else if (sel.value === "EC") hostingCostUSD = 500;
-    else if (["HS", "CI", "SC"].includes(sel.value)) {
-        const config = subTypeConfig[seliii.value];
-        if (config) hostingCostUSD = config.host;
-    } else {
-        hostingCostUSD = 250;
-    }
-
+    hostingCostUSD = hostingPrice * pageCount;
+   
     // 2. Handle the Hosting UI display conversion
     if (currencyToggle.checked) {
         host.textContent = (hostingCostUSD * exchangeRate).toFixed(0);
@@ -221,7 +215,7 @@ function refreshCalculations() {
 
 function updateRem() {
     // 1. Start with the base 70% of the project value (USD)
-    let remUSD = val * 0.7;
+    let remUSD = val * 0.6;
 
     // 2. Add hosting only if the checkbox is checked
     // Note: We use the raw 'host' value logic here to keep math consistent

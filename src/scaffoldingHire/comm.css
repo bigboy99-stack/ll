@@ -92,7 +92,7 @@
  #caption { margin: auto; display: block; width: 80%; max-width: 700px; text-align: center; color: #ccc; padding: 15px 0; font-size: 1.1rem; }
  .close-modal { position: absolute; top: 10px; right: 35px; color: #f1f1f1; font-size: 60px; font-weight: bold; cursor: pointer; }
  
- img {display: inline-block;margin-block: 4px;border-radius: 6px;}
+ img {display: inline-block;margin-block: 0px;border-radius: 6px;}
  #ct {margin: 64px auto 0px auto;max-width: 700px; text-align: center;}
  .cts, .ctss {max-width: max-content;margin-inline: auto;justify-content: center;text-align: center;border: 1px solid #33333321;box-shadow: -2px 2px 4px #33333399;background: #ffffff76;padding: 10px;border-radius: 8px;}
  .ctss {border: none;box-shadow: none;background: none;}
