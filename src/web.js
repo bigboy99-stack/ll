@@ -12,14 +12,14 @@ const sb = document.querySelector(".sb");
 const ld = document.querySelector(".lb");
 const sv = document.querySelector(".sbs");
 const hb = document.querySelector("#sb-btn");
-const prj = document.querySelector(".prj");
-const pd2 = document.querySelector(".pd2");
+// const prj = document.querySelector(".prj");
+// const pd2 = document.querySelector(".pd2");
 const ema = document.querySelector("#ema");
 const cs = document.querySelector("#cs");
 const cp = document.querySelector(".copy");
 
 hb.onclick = () => {toggleDropdown(hb, sb, "sbb");};
-pd2.onclick = () => {toggleDropdown(pd2, prj, "uls");};
+// pd2.onclick = () => {toggleDropdown(pd2, prj, "uls");};
 ld.onclick = two;
 
 function two() {
@@ -60,16 +60,16 @@ document.addEventListener('keydown', (e) => {
     toggleDropdown(hb, sb, "sbb"); // Reuses the new toggle function
   }
   // Projects dropdown (prj) close on ESC
-  if (e.key === 'Escape' && prj.classList.contains('uls')) {
-    toggleDropdown(pd2, prj, "uls"); // Reuses the new toggle function
-  }
+  // if (e.key === 'Escape' && prj.classList.contains('uls')) {
+  //   toggleDropdown(pd2, prj, "uls"); // Reuses the new toggle function
+  // }
 });
 document.addEventListener('click', (e) => {
   // Close Sidebar if click is outside the button (hb) and the menu (sb)
   if (sb.classList.contains('sbb') && !sb.contains(e.target) && !hb.contains(e.target)) {toggleDropdown(hb, sb, "sbb");}
 
   // Close Projects dropdown if click is outside the button (pd2) and the menu (prj)
-  if (prj.classList.contains('uls') && !prj.contains(e.target) && !pd2.contains(e.target)) {toggleDropdown(pd2, prj, "uls");}
+  // if (prj.classList.contains('uls') && !prj.contains(e.target) && !pd2.contains(e.target)) {toggleDropdown(pd2, prj, "uls");}
 });
 
 document.addEventListener('DOMContentLoaded', () => {

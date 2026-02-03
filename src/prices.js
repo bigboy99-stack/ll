@@ -6,8 +6,8 @@ const ht = document.querySelector("html")
 const sb = document.querySelector(".sb")
 const sv = document.querySelector(".sbs")
 const hb = document.querySelector("#sb-btn")
-const prj = document.querySelector(".prj")
-const pd2 = document.querySelector(".pd2");
+// const prj = document.querySelector(".prj")
+// const pd2 = document.querySelector(".pd2");
 const ema = document.querySelector("#ema");
 const btc = document.querySelector(".btcwal");
 const copy = Array.from(document.querySelectorAll(".copy"));
@@ -91,7 +91,7 @@ currencyToggle.onchange = () => { refreshCalculations(); };
 
 ld.onclick = two;
 hb.onclick = () => {toggleDropdown(hb, sb, "sbb")};
-pd2.onclick = () => {toggleDropdown(pd2, prj, "uls")};
+// pd2.onclick = () => {toggleDropdown(pd2, prj, "uls")};
 
 copy[0].onclick = () => {
   btc.select();
@@ -124,13 +124,13 @@ copy[3].onclick = () => {
 }
 
 document.addEventListener("keydown", t => {
-    "Escape" === t.key && sb.classList.contains("sbb") && toggleDropdown(hb, sb, "sbb"),
-    "Escape" === t.key && prj.classList.contains("uls") && toggleDropdown(pd2, prj, "uls")
+    "Escape" === t.key && sb.classList.contains("sbb") && toggleDropdown(hb, sb, "sbb")
+    // "Escape" === t.key && prj.classList.contains("uls") && toggleDropdown(pd2, prj, "uls")
 }
 )
 document.addEventListener("click", t => {
-    !sb.classList.contains("sbb") || sb.contains(t.target) || hb.contains(t.target) || toggleDropdown(hb, sb, "sbb"),
-    !prj.classList.contains("uls") || prj.contains(t.target) || pd2.contains(t.target) || toggleDropdown(pd2, prj, "uls")
+    !sb.classList.contains("sbb") || sb.contains(t.target) || hb.contains(t.target) || toggleDropdown(hb, sb, "sbb")
+    // !prj.classList.contains("uls") || prj.contains(t.target) || pd2.contains(t.target) || toggleDropdown(pd2, prj, "uls")
 }
 );
 
