@@ -138,7 +138,7 @@ input:checked + .slider:before {transform: translateX(26px);}
 
 #check {width: 27px;height: 27px;}
 .maint {font-weight: 500;}
-.toBtcWallet {font-size: 18px;}
+.toBtcWallet {font-size: 22px;padding-inline-start: 8px;}
 .tobtc {font-size: 25px;}
 .in1 {color: var(--dg1);font-size: 1.5rem;border-left: 3px solid #27ae60;padding-left: 10px;}
 .rem1 {color: #616363;font-size: 1.1rem;padding-left: 13px;border-left: 2px solid #5d5d5d;}

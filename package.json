@@ -5,9 +5,9 @@
   "description": "",
 
   "scripts": {
-    "minify:js": "for %f in (src\\*.js) do (terser \"%f\" -o \"dist/%~nf.js\" -c -m)",
+    "minify:js": "for %f in (src\\prices.js) do (terser \"%f\" -o \"dist/%~nf.js\" -c -m)",
     "minify:css": "for %f in (src\\prices.css) do (postcss -o \"dist/%~nf.css\" \"%f\")",
-    "minify:html": "for %f in (src\\*.html) do (html-minifier-terser --collapse-whitespace --remove-comments \"%f\" -o \"dist/%~nf.html\")",
+    "minify:html": "for %f in (src\\prices.html) do (html-minifier-terser --collapse-whitespace --remove-comments \"%f\" -o \"dist/%~nf.html\")",
     "bes:js": "for %f in (src\\bespokeJoinery\\*.js) do (terser \"%f\" -o \"dist/bespokeJoinery/%~nf.js\" -c -m)",
     "bes:css": "for %f in (src\\bespokeJoinery\\*.css) do (postcss -o \"dist/bespokeJoinery/%~nf.css\" \"%f\")",
     "bes:html": "for %f in (src\\bespokeJoinery\\*.html) do (html-minifier-terser --collapse-whitespace --remove-comments \"%f\" -o \"dist/bespokeJoinery/%~nf.html\")",
