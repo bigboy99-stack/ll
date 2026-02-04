@@ -14,7 +14,7 @@
     "scaff:js": "for %f in (src\\scaffoldingHire\\*.js) do (terser \"%f\" -o \"dist/scaffoldingHire/%~nf.js\" -c -m)",
     "scaff:css": "for %f in (src\\scaffoldingHire\\*.css) do (postcss -o \"dist/scaffoldingHire/%~nf.css\" \"%f\")",
     "scaff:html": "for %f in (src\\scaffoldingHire\\*.html) do (html-minifier-terser --collapse-whitespace --remove-comments \"%f\" -o \"dist/scaffoldingHire/%~nf.html\")",
-    "build": "npm run minify:js & npm run minify:css & npm run minify:html & npm run bes:js & npm run bes:css & npm run bes:html",
+    "build": "npm run minify:js & npm run minify:css & npm run minify:html",
     "scaff": "npm run scaff:js & npm run scaff:css & npm run scaff:html"
   },
 

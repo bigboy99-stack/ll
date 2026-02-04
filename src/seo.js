@@ -1,5 +1,5 @@
-document.body.onload = initializeTheme,
-setTimeout( () => pd2.focus(), 200);
+document.body.onload = initializeTheme
+// setTimeout( () => pd2.focus(), 200);
 const ld = document.querySelector(".lb")
 const ht = document.querySelector("html")
 const sb = document.querySelector(".sb")

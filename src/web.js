@@ -1,5 +1,5 @@
 document.body.onload = initializeTheme;
-setTimeout(()=>pd2.focus(), 200);
+// setTimeout(()=>pd2.focus(), 200);
 setTimeout(()=>alert(`this website can only navigate with keyboard buttons.
    focus down = tab,
    focus up = shift + tab, 
