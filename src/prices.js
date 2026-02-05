@@ -213,7 +213,7 @@ function refreshCalculations() {
 
     // 3. Calculate Totals
     if (sel.value === 'LP') {
-        val = 1000;
+        val = 800;
         finalTotalUSD = hstchk.checked ? (val + hostingCostUSD) : val;
     } else {
         val = 500 * pageCount; // Base project value in USD
