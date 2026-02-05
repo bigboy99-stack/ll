@@ -51,6 +51,7 @@ sel.onchange = () => {
     // Toggle Sub-category dropdown
     if (["HS", "CI", "SC"].includes(sel.value)) {
         seliii.classList.add('s3');
+        selii.classList.remove('none');
         // Set specific sub-options based on main category
         if (sel.value === 'HS') {
             s3[0].textContent = 'Roofing'; s3[0].value = 'roofing';
@@ -66,7 +67,13 @@ sel.onchange = () => {
             s3[2].textContent = ''; s3[2].value = '';
         }
         fl(subTypeConfig[seliii.value].min);
+    } else if (sel.value === 'LP') {
+        selii.classList.add('none');
+        // val = 1000;
+        // refreshCalculations();
+        // tot(1000)
     } else {
+        selii.classList.remove('none');
         seliii.classList.remove('s3');
         // Standard page updates
         if (sel.value === "PE") fl(1);
@@ -190,6 +197,7 @@ function updatePaymentSplits() {
 function refreshCalculations() {
     let pageCount = Number(selii.value.match(/\d+/)) || 1;
     let hostingCostUSD = 30; // Default base in USD
+    let finalTotalUSD;
 
     // 1. Determine base USD hosting cost
     hostingCostUSD = hostingPrice * pageCount;
@@ -204,8 +212,13 @@ function refreshCalculations() {
     }
 
     // 3. Calculate Totals
-    val = 500 * pageCount; // Base project value in USD
-    let finalTotalUSD = hstchk.checked ? (val + hostingCostUSD) : val;
+    if (sel.value === 'LP') {
+        val = 1000;
+        finalTotalUSD = hstchk.checked ? (val + hostingCostUSD) : val;
+    } else {
+        val = 500 * pageCount; // Base project value in USD
+        finalTotalUSD = hstchk.checked ? (val + hostingCostUSD) : val;
+    }
 
     // 4. Update the rest of the UI
     tot(finalTotalUSD.toString());

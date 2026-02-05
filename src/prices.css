@@ -146,6 +146,8 @@ input:checked + .slider:before {transform: translateX(26px);}
 #tta {background-color: #2ecc71;width: max-content;height: 40px;padding-block: 4px;padding-inline: 6px;border-radius: 8px;text-align: left;align-content: center;}
 #tta svg {margin-block-end: -10px;}
 footer {max-width: 100%;padding: 1px;margin: 32px auto 40px auto;border-radius: 6px;text-align: center;}
+.none {display: none;}
+.init {display: initial;}
 
 [data-theme="dark"] {
   .nd {background-color: #61616152;transition: var(--anim);border: 2px solid hsla(0, 0%, 68%, 0.224);}
